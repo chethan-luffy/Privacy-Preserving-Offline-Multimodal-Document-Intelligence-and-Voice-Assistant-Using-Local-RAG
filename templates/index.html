@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline Chat</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <button id="new-chat-btn" class="new-chat-btn">+ New chat</button>
+      <div id="conv-list" class="conv-list"></div>
+      <div class="sidebar-footer">
+        <span class="dot" id="ollama-dot"></span>
+        <span id="ollama-status-text">Checking Ollama...</span>
+      </div>
+    </aside>
+
+    <main class="chat">
+      <header class="chat-header">
+        <div class="header-left">
+          <span id="conv-title" class="conv-title">Select or start a chat</span>
+        </div>
+        <div class="header-right">
+          <select id="model-select" class="model-select" disabled></select>
+          <label class="rag-toggle">
+            <input type="checkbox" id="rag-toggle-input" disabled>
+            <span>Use documents</span>
+          </label>
+          <button id="docs-btn" class="docs-btn" disabled>📎 Docs</button>
+        </div>
+      </header>
+
+      <div id="docs-panel" class="docs-panel hidden">
+        <div class="docs-panel-inner">
+          <h3>Documents for this chat</h3>
+          <div id="doc-list" class="doc-list">
+            <p class="empty">No files attached.</p>
+          </div>
+          <label class="upload-btn" for="file-input">
+            + Add PDFs or photos
+            <input type="file" id="file-input" accept="application/pdf,image/png,image/jpeg,image/webp,image/bmp,image/tiff" multiple hidden>
+          </label>
+          <p class="hint">Photos (incl. handwritten notes) are OCR'd locally.</p>
+          <button id="build-btn" class="build-btn" disabled>Build Index</button>
+          <div id="progress-wrap" class="progress-wrap hidden">
+            <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+            <p id="progress-msg" class="progress-msg">Starting...</p>
+          </div>
+          <button id="docs-close-btn" class="docs-close-btn">Close</button>
+        </div>
+      </div>
+
+      <div id="messages" class="messages">
+        <div class="empty-state">
+          <h2>Offline Chat</h2>
+          <p>Fully local via Ollama. Start a new chat, pick a model, and optionally attach PDFs or photos for it to search.</p>
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <button type="button" id="mic-btn" class="mic-btn" disabled title="Voice input">🎤</button>
+        <input type="text" id="chat-input" placeholder="Message..." autocomplete="off" disabled>
+        <button type="submit" id="send-btn" disabled>Send</button>
+      </form>
+      <p id="mic-status" class="mic-status hidden"></p>
+    </main>
+  </div>
+
+  <script src="/static/markdown.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>

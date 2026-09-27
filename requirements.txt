@@ -1,0 +1,20 @@
+flask
+werkzeug
+requests
+langchain
+langchain-community
+langchain-text-splitters
+langchain-huggingface
+langchain-core
+faiss-cpu
+sentence-transformers
+pypdf
+
+# Offline image OCR (printed + handwritten)
+easyocr
+torch
+torchvision
+
+# Offline voice: speech-to-text + text-to-speech
+faster-whisper
+pyttsx3
