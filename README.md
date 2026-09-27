@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Offline Chat — ChatGPT/Claude-style, fully local
 
 A multi-conversation chat app that runs entirely on your machine via
@@ -114,3 +115,7 @@ Open **http://127.0.0.1:5000**.
   hands-free listening — click to start, click to stop, review the text,
   then send. Wake-word / always-listening mode would be a separate (bigger)
   feature.
+=======
+# Privacy-Preserving-Offline-Multimodal-Document-Intelligence-and-Voice-Assistant-Using-Local-RAG
+Offline Chat — ChatGPT/Claude-style, fully local  A multi-conversation chat app that runs entirely on your machine via [Ollama](https://ollama.com), with optional per-chat document search (PDFs and photos, including handwritten notes, via local OCR).
+>>>>>>> 07f0ff5bd75b3f2f70f57d0ccb46a3c270821bdb
